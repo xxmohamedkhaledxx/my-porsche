@@ -3,9 +3,10 @@
     src: url('font/Porsche Regular.ttf') format('truetype'); /* مسار ملف الخط */
 }
 
-*{
+* {
     font-family: 'MyCustomFont', sans-serif; /* fallback لو الخط مش متوفر */
 }
+
 /* General Reset */
 body, h2, p, ul, li, textarea {
     margin: 0;
@@ -23,20 +24,21 @@ body {
 }
 
 /* Header */
-.logo{
+.logo {
     height: 50px;
     width: 45px;
     margin-right: 20px;
 }
+
 /* Main Section */
 .container {
     display: flex;
     gap: 2rem;
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 1rem;
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 2rem;
     background: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -52,22 +54,27 @@ body {
 
 .image-thumbnails {
     display: flex;
-    justify-content: space-between;
-    margin-top: 1rem;
-    gap: 0.5rem;
-    flex-wrap: wrap; /* Adapt thumbnails if space is limited */
+    justify-content: space-between; /* يجعل الصور جنب بعض */
+    gap: 0.5rem; /* المسافة بين الصور */
+    margin-top: 19px;
+    flex-wrap: wrap;
 }
 
 .image-thumbnails img {
-    width: 11%; /* Adjust thumbnail size for 8 images */
-    cursor: pointer;
-    border: 2px solid transparent;
+    width: 10%; /* عرض الصور المصغرة بحيث تكون جميعها 8 جنب بعض */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+    object-fit: cover;
     border-radius: 8px;
-    transition: border-color 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    width: 12%; /* عرض الصور المصغرة بحيث تكون جميعها 8 جنب بعض */
+    height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
 }
 
+/* تأثير عند المرور على الصور */
 .image-thumbnails img:hover {
-    border-color: #ff0000;
+    transform: scale(1.1);
+    border-color: #ff0000; /* تغيير حدود الصورة عند التمرير */
 }
 
 /* Car Info */
@@ -97,39 +104,96 @@ footer {
     text-align: center;
     padding: 20px 0;
     font-family: 'Arial', sans-serif;
-  }
-  
-  .footer-container p {
+}
+
+.footer-container p {
     margin: 5px 0;
-  }
-  
-  .footer-links a,
-  .footer-contact a,
-  .footer-socials a {
+}
+
+.footer-links a,
+.footer-contact a,
+.footer-socials a {
     color: #1abc9c;
     text-decoration: none;
     margin: 0 10px;
-  }
-  
-  .footer-links a:hover,
-  .footer-contact a:hover,
-  .footer-socials a:hover {
+}
+
+.footer-links a:hover,
+.footer-contact a:hover,
+.footer-socials a:hover {
     color: #16a085;
     text-decoration: underline;
-  }
-  
-  .footer-socials .social-link {
+}
+
+.footer-socials .social-link {
     display: inline-block;
     margin: 5px 10px;
     font-weight: bold;
-  }
-  
-  .footer-contact {
+}
+
+.footer-contact {
     margin: 10px 0;
     font-size: 14px;
-  }
-  
-h1{
+}
+
+h1 {
     width: 40;
     height: 50;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .container img {
+        width: 80%; /* يجعل الصور بعرض مناسب للشاشة */
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .container .text {
+        margin-top: 20px;
+    }
+
+    /* الشريط السفلي للصور */
+    .image-thumbnails {
+        flex-direction: row; /* وضع الصور جنب بعض */
+        gap: 10px;
+    }
+
+    .image-thumbnails img {
+        width: 120px; /* حجم الصور المصغرة */
+        height: 90px; /* ارتفاع الصور المصغرة */
+        object-fit: cover;
+        flex-shrink: 0; /* منع تصغير الصور */
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .image-thumbnails img:hover {
+        transform: scale(1.1); /* تأثير التكبير عند التمرير */
+    }
+}
+@media (max-width: 768px) {
+    .image-thumbnails {
+        justify-content: center; /* لتوسيط الصور */
+        gap: 5px; /* تقليل المسافة بين الصور في الهواتف */
+    }
+
+    .image-thumbnails img {
+        width: 20%; /* تصغير حجم الصور في الهواتف */
+        height: auto;
+        object-fit: cover;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    /* تأثير التكبير عند التمرير */
+    .image-thumbnails img:hover {
+        transform: scale(1.1);
+    }
 }
