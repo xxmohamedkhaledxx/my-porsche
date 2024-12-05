@@ -1,0 +1,135 @@
+@font-face {
+    font-family: 'MyCustomFont'; /* اسم مخصص للخط */
+    src: url('font/Porsche Regular.ttf') format('truetype'); /* مسار ملف الخط */
+}
+
+*{
+    font-family: 'MyCustomFont', sans-serif; /* fallback لو الخط مش متوفر */
+}
+/* General Reset */
+ h1, h2, h3, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Hero Section */
+
+/* About Section */
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Models Section */
+.models {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.models h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.model-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.model-card {
+    flex: 1;
+    min-width: 250px;
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.model-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.model-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.model-card p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.model-card a {
+    color: #ff0000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .footer-container p {
+    margin: 5px 0;
+  }
+  
+  .footer-links a,
+  .footer-contact a,
+  .footer-socials a {
+    color: #1abc9c;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .footer-links a:hover,
+  .footer-contact a:hover,
+  .footer-socials a:hover {
+    color: #16a085;
+    text-decoration: underline;
+  }
+  
+  .footer-socials .social-link {
+    display: inline-block;
+    margin: 5px 10px;
+    font-weight: bold;
+  }
+  
+  .footer-contact {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+  
+
+  .logo{
+    height: 50px;
+    width: 45px;
+    margin-right: 20px;
+}
